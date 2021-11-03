@@ -1,37 +1,14 @@
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: 'Björn',
-//   age: 39,
-//   hobbies: ['Sports', 'Cooking'],
-//   role: [2, 'author'],
-// };
+let userInput: unknown;
+let userName: string;
 
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
+userInput = 3;
+userInput = 'max';
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-const person = {
-  name: 'Björn',
-  age: 39,
-  hobbies: ['Sports', 'Cooking'],
-  role: Role.ADMIN,
-};
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+}
 
-// person.role.push('admin');
-// person.role[1] = 10;
-
-console.log(person.name);
+generateError('An error', 500);
